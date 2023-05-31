@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.img {
+	width: 100px;
+	height: 100px;
+}
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+		const images = ["images/최근상품01.jpg","images/최근상품02.jpg"];
+		window.onload = () =>{
+			const div = document.getElementById("test");
+			let msg = "";
+			for(let i = 0;i<images.length;i++){
+				msg += `<img src="${images[i]}" class="img">`;
+			}
+			div.innerHTML = msg;
+		}
+	</script>
+	<div id="test"></div>
+
+
+</body>
+</html>

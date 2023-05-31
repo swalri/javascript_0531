@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/* 이미지 크기 */
+.img {
+	width: 100px;
+	height: 100px;
+}
+
+.imgdiv {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	border: 1px solid gray;
+	position: relative; /* 이걸 사용해야 안에있는 것을 absolute로 지정할수있다 */
+}
+
+#ch {
+	width: 50px;
+	height: 50px;
+	text-align: center; /* 글자 가로 가운데 */
+	line-height: 50px; /* 글자 세로 가운데 */
+	background: orange;
+	/*글자 블럭 가운데로 하는데 있어 필수*/
+	position: absolute;
+	top: 25px;
+	left: 25px;
+}
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+		const images = ["../images/최근상품01.jpg",
+			"../images/최근상품02.jpg",
+			"../images/최근상품03.jpg",
+			"../images/최근상품04.jpg",
+			"../images/최근상품05.jpg",
+			"../images/최근상품06.jpg",
+			"../images/최근상품07.jpg",
+			"../images/최근상품08.jpg"];
+		/*초기실행*/
+		window.onload = () =>{
+			const div = document.querySelector("#test");
+			let msg = "";
+			for(let i = 0;i<images.length;i++){
+				msg += (i%4==0)?`<br>`:``;
+				msg += `<div class="imgdiv" id="${i}" onmouseover="myMouseover(${i})" onmouseout="myMouseout(${i})">`;
+				msg += `<img src="${images[i]}" class="img">`;
+				msg += `</div>`;
+			}
+			div.innerHTML = msg;
+		}
+		/**마우스가 위에있을경우 실행*/
+		const myMouseover = (index) => document.getElementById(index).innerHTML = "<div id='ch'>선택</div>";
+		/**마우스가 나갔을경우 실행*/
+		const myMouseout = (index) => document.getElementById(index).innerHTML = `<img src="${images[index]}" class="img">`;	
+	</script>
+	
+	
+	<div id="test"></div>
+
+</body>
+</html>

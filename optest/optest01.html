@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#myImage01 {
+	width: 300px;
+	height: 300px;
+}
+
+div {
+	text-align: center;
+	background: red;
+	width: 300px;
+	height: 50px;
+}
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+		const images = ["../images/최근상품01.jpg",
+			"../images/최근상품02.jpg",
+			"../images/최근상품03.jpg",
+			"../images/최근상품04.jpg",
+			"../images/최근상품05.jpg",
+			"../images/최근상품06.jpg",
+			"../images/최근상품07.jpg",
+			"../images/최근상품08.jpg"];
+		let i = 0;//사진위치
+		
+		window.onload = () =>document.getElementById("myImage01").src = images[i];
+		/**이전사진으로*/
+		const clickEventdown = () => {
+			(i-1<0)? i=7:i--;
+			document.getElementById("myImage01").src = images[i];
+		}
+		/**다음사진으로*/
+		const clickEventup = () => {
+			(i>6)? i=0:i++;
+			document.getElementById("myImage01").src = images[i];
+		}
+	</script>
+	<img src="" id="myImage01">
+	<div>
+		<input type="button" value="이전사진" onclick="clickEventdown()">
+		<input type="button" value="다음사진" onclick="clickEventup()">
+	</div>
+</body>
+</html>

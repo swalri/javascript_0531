@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+img {
+	width: 100px;
+	height: 100px;
+}
+</style>
+</head>
+<body>
+	<hr>
+	<script type="text/javascript">
+		const changeImg01 = () =>{
+			const img = document.getElementById("myImage01");
+			img.src = "images/test4.jpg";
+		}
+		const changeImg02 = () =>{
+			const h3 = document.getElementById("h3");
+			h3.style.color = "red";
+			h3.style.textAlign = "center";
+			h3.style.backgroundColor = "aqua";			
+		}
+	</script>
+	<img alt="" src="images/img.jpg" id="myImage01" onclick="changeImg01()">
+	<img alt="" src="images/img.png" id="myImage02" onclick="changeImg02()">
+	<h3 id="h3">test</h3>
+
+
+</body>
+</html>
